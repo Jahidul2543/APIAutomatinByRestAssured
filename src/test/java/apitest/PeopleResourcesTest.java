@@ -15,9 +15,6 @@ public class PeopleResourcesTest {
     @Test
     public void getPeople() throws IOException {
         String url = buildURL("/test/people") ;
-//        RequestSpecification requestSpecification = (RequestSpecification) RestAssured.get(new URL(url));
-//        requestSpecification.contentType(ContentType.JSON);
-//        requestSpecification.header("Authorization", getToken());
         String token = "Bearer " + getToken();
 
         io.restassured.response.Response response = given()

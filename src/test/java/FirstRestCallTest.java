@@ -18,6 +18,12 @@ import static io.restassured.RestAssured.given;
 
 public class FirstRestCallTest {
 
+    /**
+     *
+     * This class is a simple API test class with all steps in one class
+     *
+     * */
+
     public String getToken() throws IOException {
         /**
          * 1. Get Token /oauth2/token
@@ -83,13 +89,9 @@ public class FirstRestCallTest {
         Assert.assertEquals(actualUserName, "123JohnJohn");
 
     }
-    @Test
+   // @Test
     public void getPeople() throws IOException {
         String url = "https://5x9m5ed0tj.execute-api.us-east-1.amazonaws.com/test/people";
-//        RequestSpecification requestSpecification = (RequestSpecification) RestAssured.get(new URL(url));
-//        requestSpecification.contentType(ContentType.JSON);
-//        requestSpecification.header("Authorization", getToken());
-
         io.restassured.response.Response response = given()
                 .contentType(ContentType.JSON)
                 .header("Authorization", getToken())

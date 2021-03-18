@@ -11,6 +11,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.testng.annotations.Test;
 import utils.TestUtils;
 import utils.URL;
 
@@ -31,7 +32,6 @@ public class Base {
         return url;
     }
 
-
     public static String getToken() throws IOException {
         /**
          * 1. Get Token /oauth2/token
@@ -48,9 +48,8 @@ public class Base {
          * b. Get access_token and store in a variable
          *
          * */
-        //String hostName = "https://izaan-test.auth.us-east-1.amazoncognito.com";
-        String endpoint = "/oauth2/token";
-        String url = buildURL(endpoint);
+        // Token host name is different than the Application API Host Name
+        String url = "https://izaan-test.auth.us-east-1.amazoncognito.com/oauth2/token";
 
         OkHttpClient client = new OkHttpClient.Builder().build();
         // Defining what type of information we are sending in the body
