@@ -13,6 +13,7 @@ public class TestUtils {
 	
 	public static String getResposeString(Response response){
 		log.info("Converting Response to String");
+		log.warn("This is warning");
 		String strResponse = response.getBody().asString();
 		log.debug("String Response"+ strResponse);
 		return strResponse;

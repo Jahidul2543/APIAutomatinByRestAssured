@@ -2,18 +2,18 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Automation Test" duration-ms="3339" started-at="2021-03-18T07:40:20 EDT" finished-at="2021-03-18T07:40:23 EDT">
+  <suite name="Automation Test" duration-ms="4633" started-at="2022-07-25T20:22:26 CDT" finished-at="2022-07-25T20:22:31 CDT">
     <groups>
     </groups>
-    <test name="Ecommerce Home" duration-ms="3339" started-at="2021-03-18T07:40:20 EDT" finished-at="2021-03-18T07:40:23 EDT">
+    <test name="Ecommerce Home" duration-ms="4633" started-at="2022-07-25T20:22:26 CDT" finished-at="2022-07-25T20:22:31 CDT">
       <class name="apitest.SubmitResourceTest">
-        <test-method status="PASS" signature="submitTest()[pri:0, instance:apitest.SubmitResourceTest@6b143ee9]" name="submitTest" duration-ms="1284" started-at="2021-03-18T07:40:22 EDT" finished-at="2021-03-18T07:40:23 EDT">
+        <test-method status="PASS" signature="submitTest()[pri:0, instance:apitest.SubmitResourceTest@6b143ee9]" name="submitTest" duration-ms="1358" started-at="2022-07-25T20:22:29 CDT" finished-at="2022-07-25T20:22:31 CDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitTest -->
       </class> <!-- apitest.SubmitResourceTest -->
       <class name="apitest.PeopleResourcesTest">
-        <test-method status="PASS" signature="getPeople()[pri:0, instance:apitest.PeopleResourcesTest@15975490]" name="getPeople" duration-ms="2031" started-at="2021-03-18T07:40:20 EDT" finished-at="2021-03-18T07:40:22 EDT">
+        <test-method status="PASS" signature="getPeople()[pri:0, instance:apitest.PeopleResourcesTest@15975490]" name="getPeople" duration-ms="3232" started-at="2022-07-25T20:22:26 CDT" finished-at="2022-07-25T20:22:29 CDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getPeople -->

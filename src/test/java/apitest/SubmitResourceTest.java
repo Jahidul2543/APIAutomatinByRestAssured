@@ -27,8 +27,8 @@ public class SubmitResourceTest {
         String responseBody = response.asString();
         System.out.println(responseBody);
         JsonPath jsonPath = new JsonPath(responseBody);
-        String actualUserName = jsonPath.get("userName");
-        Assert.assertEquals(actualUserName, "123JohnJohn");
+        String actualMessage = jsonPath.get("message");
+        Assert.assertEquals(actualMessage, "You are Minor.");
 
     }
 }
