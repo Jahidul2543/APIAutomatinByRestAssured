@@ -22,6 +22,11 @@ public class FirstRestCallTest {
      *
      * This class is a simple API test class with all steps in one class
      *
+     *  Step 01: Prepare the api call
+     *  Step 02: Execute the call
+     *  Step 03: Process the response/result (Get The Token Value)
+     *  Step 04 (Optional): Use/Consume the result (Pass the token value to Submit API call )
+     *
      * */
 
     public String getToken() throws IOException {
@@ -38,11 +43,14 @@ public class FirstRestCallTest {
          * Processing the response
          * a. Validated Status Code
          * b. Get access_token and store in a variable
-         *
+         * endpoint ~ Complete URL
          * */
+
+        /**** Step 01: Prepare the api call *****/
+
         String hostName = "https://izaan-test.auth.us-east-1.amazoncognito.com";
-        String endpoint = "/oauth2/token";
-        String url = hostName + endpoint;
+        String resource = "/oauth2/token";
+        String url = hostName + resource;
 
         OkHttpClient client = new OkHttpClient.Builder().build();
         // Defining what type of information we are sending in the body
@@ -59,7 +67,13 @@ public class FirstRestCallTest {
                 .addHeader("Authorization", authorization)
                 .addHeader("Content-Type", "application/x-www-form-urlencoded")
                 .build();
+
+        /**** Step 02: Execute teh call *****/
+
        Response response = client.newCall(request).execute();
+
+        /****  Step 03: Process the response/result *****/
+
        // Convert responseBody as String
        String responseBody = response.body().string();
        //System.out.println(responseBody);
@@ -75,17 +89,23 @@ public class FirstRestCallTest {
     // Make a post call to test/submit endpoint
 
     public void submitTest() throws IOException {
+        /**** Step 01: Prepare the api call *****/
         // /Users/jahidul/IdeaProjects/APIAutomatinByRestAssured/payloads/submit.json
         String url = "https://5x9m5ed0tj.execute-api.us-east-1.amazonaws.com/test/submit";
         String submitPayload = new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir")+ "/payloads/submit.json")));
         RequestSpecification requestSpecification = given().body(submitPayload);
         requestSpecification.contentType(ContentType.JSON);
         requestSpecification.header("Authorization", getToken());
+        /**** Step 02: Execute teh call *****/
         io.restassured.response.Response response = requestSpecification.post(url);
+
+        /****  Step 03: Process the response/result *****/
+
         String responseBody = response.asString();
         System.out.println(responseBody);
         JsonPath jsonPath = new JsonPath(responseBody);
         String actualUserName = jsonPath.get("userName");
+        // Validation
         Assert.assertEquals(actualUserName, "123JohnJohn");
 
     }
