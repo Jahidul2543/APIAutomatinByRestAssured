@@ -4,8 +4,9 @@
 <suite name="Automation Test" parallel="false" >
     <test name = "Ecommerce Home">
         <classes>
-            <class name="apitest.PeopleResourcesTest"/>
-            <class name="apitest.SubmitResourceTest"/>
+<!--            <class name="apitest.PeopleResourcesTest"/>-->
+<!--            <class name="apitest.SubmitResourceTest"/>-->
+            <class name="tollappapitest.TollCollectionListRequestTest"></class>
         </classes>
     </test>
 

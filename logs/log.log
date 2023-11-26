@@ -1,1 +1,3 @@
-2023-11-26 08:43:07 INFO  Base:31 - End Point : /test/people
+2023-11-26 09:12:38 INFO  TestUtils:38 - Getting Response Code
+2023-11-26 09:12:38 INFO  TestUtils:40 - Status Code: 200
+2023-11-26 09:12:38 INFO  Base:74 - ValidateResponse Test Passed
