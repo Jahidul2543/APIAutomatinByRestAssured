@@ -11,7 +11,7 @@ public class TestUtils {
 	
 	private static Logger log = LogManager.getLogger(TestUtils.class.getName());
 	
-	public static String getResposeString(Response response){
+	public static String getResponseString(Response response){
 		log.info("Converting Response to String");
 		log.warn("This is warning");
 		String strResponse = response.getBody().asString();
@@ -58,13 +58,5 @@ public class TestUtils {
 		String responseBody = body.asString();
 		log.info("Response Body is: " + responseBody);
 		return new String();
-
 	}
-	
-	
-	
-	
-	
-	
-	
 }

@@ -97,7 +97,7 @@ public class Base {
         response = POSTRequest(endPointURI, loginPayload);
         log.info("Login Response Body: "+response.getBody().asString());
 
-        String strResponse = TestUtils.getResposeString(response);
+        String strResponse = TestUtils.getResponseString(response);
         JsonPath jsonRes = TestUtils.jsonParser(strResponse);
         String sessionID = jsonRes.getString("session.value");
         log.info("JIRA JSession ID : " + sessionID);
